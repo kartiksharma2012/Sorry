@@ -1,0 +1,143 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #ffe6ee, #fff3f7);
+  overflow-x: hidden;
+}
+
+/* Floating hearts (CSS only) */
+body::before,
+body::after {
+  content: "♡";
+  position: fixed;
+  font-size: 22px;
+  color: rgba(255, 140, 170, 0.25);
+  animation: float 14s linear infinite;
+}
+
+body::after {
+  left: 70%;
+  animation-delay: 7s;
+}
+
+@keyframes float {
+  from {
+    bottom: -10%;
+    transform: translateX(0);
+  }
+  to {
+    bottom: 110%;
+    transform: translateX(-40px);
+  }
+}
+
+/* Container */
+.container {
+  max-width: 420px;
+  margin: auto;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+/* Photo */
+.photo {
+  width: 220px;
+  height: 220px;
+  margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(255, 150, 180, 0.35);
+}
+
+.photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Text */
+.message {
+  margin-top: 30px;
+}
+
+.message h1 {
+  font-weight: 500;
+  color: #444;
+  margin-bottom: 16px;
+}
+
+.message p {
+  font-size: 15px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 14px;
+}
+
+.message .soft {
+  font-size: 14px;
+  color: #777;
+}
+
+/* Button */
+.btn {
+  margin-top: 26px;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  background: #ffb6c9;
+  color: #fff;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 18px rgba(255, 150, 180, 0.4);
+}
+
+/* Hidden message */
+.hidden-message {
+  display: none;
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 14px;
+  font-size: 14px;
+  color: #555;
+}
+
+/* Fade animations */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1.2s ease forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.4s;
+}
+
+.delay-2 {
+  animation-delay: 0.8s;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .photo {
+    width: 190px;
+    height: 190px;
+  }
+}
